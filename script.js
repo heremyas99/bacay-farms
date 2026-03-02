@@ -1,9 +1,7 @@
-  // ── 5. Log Check ──────────────────────────────────────────
   window.addEventListener('load', () => {
     console.log(`Developed by: Jeremie R. Bacay | Student ID: 2024-00556`);
   });
 
-  // ── Menu Data (Template Literals + DOM injection) ──────────
   const menuItems = [
     { name: 'Farm Bowl',        icon: 'fa-bowl-rice',      desc: 'Rice, greens, roasted veggies & your choice of protein', price: '₱195', img: 'img/farm-bowl.jpg' },
     { name: 'Green Salad',      icon: 'fa-leaf',           desc: 'Mixed greens, cucumber, tomato & house vinaigrette',      price: '₱150', img: 'img/green-salad.jpg' },
@@ -42,13 +40,11 @@
 
 
 
-  // ── Ticker ────────────────────────────────────────────────
-  const tickerText = '🌿 Fresh Daily &nbsp;•&nbsp; 🥗 Farm to Fork &nbsp;•&nbsp; 🍚 100% Natural &nbsp;•&nbsp; 🌾 Local Ingredients &nbsp;•&nbsp; 💚 No Preservatives &nbsp;•&nbsp; 🥑 Eat Clean, Live Green &nbsp;•&nbsp; ';
+  const tickerText = ' Fresh Daily &nbsp;•&nbsp;  Farm to Fork &nbsp;•&nbsp;  100% Natural &nbsp;•&nbsp;  Local Ingredients &nbsp;•&nbsp;  No Preservatives &nbsp;•&nbsp;  Eat Clean, Live Green &nbsp;•&nbsp; ';
   const ticker = document.getElementById('ticker-content');
   ticker.innerHTML = tickerText.repeat(4);
   ticker.nextElementSibling.innerHTML = tickerText.repeat(4);
 
-  // ── Hamburger Menu (DOM Selection + Event Listener + Class Manipulation) ──
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   const hamIcon    = document.getElementById('ham-icon');
@@ -64,7 +60,6 @@
     }
   });
 
-  // Close mobile menu on link click
   document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
@@ -73,7 +68,6 @@
     });
   });
 
-  // ── 6. Color Shift Button ──────────────────────────────────
   const colorShiftBtn  = document.getElementById('color-shift-btn');
   const specialSection = document.getElementById('special-section');
   const shiftColors    = ['#fff3e0','#e8f5e9','#fce4ec','#e3f2fd','#f3e5f5','#fefae0'];
@@ -85,7 +79,6 @@
     colorShiftBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Shift Again!`;
   });
 
-  // ── Rewards Modal ──────────────────────────────────────────
   const rewardsBtn    = document.getElementById('rewards-btn');
   const rewardsModal  = document.getElementById('rewards-modal');
   const modalClose    = document.getElementById('modal-close');
@@ -119,7 +112,6 @@
     setTimeout(() => { rewardsModal.classList.add('hidden'); document.body.classList.remove('overflow-hidden'); }, 2500);
   });
 
-  // ── Contact Form ──────────────────────────────────────────
   const submitBtn      = document.getElementById('submit-btn');
   const formFeedback   = document.getElementById('form-feedback');
 
@@ -140,7 +132,6 @@
     ['form-name','form-email','form-message'].forEach(id => document.getElementById(id).value = '');
   });
 
-  // ── Newsletter ─────────────────────────────────────────────
   const newsletterBtn = document.getElementById('newsletter-btn');
   const newsletterMsg = document.getElementById('newsletter-msg');
 
@@ -158,7 +149,6 @@
     }
   });
 
-  // ── Add to Cart notification ───────────────────────────────
   document.addEventListener('click', e => {
     if (e.target.closest('.add-to-cart')) {
       const btn  = e.target.closest('.add-to-cart');
@@ -174,7 +164,6 @@
     }
   });
 
-  // ── Navbar scroll shrink ───────────────────────────────────
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
     if (window.scrollY > 60) {
@@ -183,3 +172,18 @@
       nav.classList.remove('shadow-2xl');
     }
   });
+
+  
+const heroSection = document.getElementById('hero-section');
+const viewMenuBtn = document.getElementById('view-menu-btn');
+const heroColors  = ['#1b4332', '#3a5a8c', '#6b3a2a', '#4a3a6b', '#1a5c5c', '#2d6a4f'];
+let heroColorIdx  = 0;
+
+viewMenuBtn.addEventListener('mouseenter', () => {
+  heroColorIdx = (heroColorIdx + 1) % heroColors.length;
+  heroSection.style.backgroundColor = heroColors[heroColorIdx];
+});
+
+viewMenuBtn.addEventListener('mouseleave', () => {
+  heroSection.style.backgroundColor = '';
+});
