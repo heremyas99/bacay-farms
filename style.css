@@ -8,7 +8,6 @@
     body { font-family: 'Nunito', sans-serif; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-    /* Animations */
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(40px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -28,18 +27,14 @@
     .float-leaf    { animation: float 4s ease-in-out infinite; }
     .wiggle-badge  { animation: wiggle 2s ease-in-out infinite; }
 
-    /* Hero diagonal clip */
     .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
 
-    /* Leaf texture overlay */
     .leaf-bg {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%232d6a4f' opacity='0.08'/%3E%3C/svg%3E");
     }
 
-    /* Smooth scroll */
     html { scroll-behavior: smooth; }
 
-    /* Nav link underline animation */
     .nav-link { position: relative; }
     .nav-link::after {
       content: '';
@@ -50,21 +45,21 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* Card hover lift */
     .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
 
-    /* Color shift section */
     #special-section { transition: background-color 1.2s ease; }
 
-    /* Mobile menu */
     #mobile-menu { transition: max-height 0.4s ease, opacity 0.4s ease; max-height: 0; opacity: 0; overflow: hidden; }
     #mobile-menu.open { max-height: 400px; opacity: 1; }
 
-    /* Ticker */
     @keyframes ticker {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
     .ticker-wrap { overflow: hidden; }
     .ticker-track { display: flex; white-space: nowrap; animation: ticker 18s linear infinite; }
+
+  #hero-section {
+  transition: background-color 0.6s ease;
+}
